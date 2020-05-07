@@ -1,13 +1,18 @@
 <template lang="pug">
   #app
     .container
+      main-header
       h1 Hello
 </template>
 
 <script>
+import MainHeader from "./components/Layout/Header.vue"
 
 export default {
   name: 'App',
+  components: {
+    MainHeader
+  }
 }
 </script>
 
