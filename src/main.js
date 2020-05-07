@@ -9,7 +9,9 @@ import {
   faSlidersH,
   faRedo,
   faThumbtack,
-  faExclamation
+  faExclamation,
+  faBars,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -22,7 +24,9 @@ library.add(
   faSlidersH,
   faRedo,
   faThumbtack,
-  faExclamation
+  faExclamation,
+  faBars,
+  faTimes
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
