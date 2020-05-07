@@ -1,6 +1,168 @@
 ////////////////////
 //  HEADER
 ////////////////////////////////////////////////////////////////////////////////
+
 .main-header
+  $current: &
   height: $header-height
-  border-bottom: rem(2px) solid $gray
+  border-bottom: rem(2px) solid $gray-light
+  position: relative
+
+  &__menu
+    position: static
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    ul
+      $gutter: 1rem
+      display: flex
+
+
+  &__link
+    position: relative
+    height: $header-height
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $gray
+    transition: color $transition-default
+    padding-left: 1rem
+    padding-right: 1rem
+    font-size: rem(18px)
+    font-weight: 600
+    &::after
+      content: ''
+      position: absolute
+      width: 0%
+      height: rem(2px)
+      background-color: $primary
+      opacity: 0
+      left: 50%
+      bottom: 0
+      transition: width $transition-default, opacity $transition-default, left $transition-default
+
+    &:hover,
+    &.active
+      color: $primary
+      &::after
+        width: 100%
+        opacity: 1
+        left: 0%
+
+    svg
+      font-size: rem(23px)
+
+
+  &__toggler
+    display: none
+
+
+  &__separator
+    position: relative
+    padding-left: rem(20px)
+    &::before
+      content: ''
+      position: absolute
+      left: rem(10px)
+      top: 20%
+      bottom: 20%
+      width: rem(2px)
+      background-color: $gray-light
+
+
+  // SM >
+  /////////////////////////////////////////////////
+  @media (min-width: map-get($grid-breakpoints, "sm"))
+    &__nav-right
+      display: flex
+      align-items: center
+
+
+  // XS <
+  /////////////////////////////////////////////////
+  @media (max-width: map-get($grid-breakpoints, "sm") - 1px)
+
+    /////////////////////// OPEN EFFECT
+    &__nav-right
+      transform: translateX(100%)
+      transition: transform $transition-default
+      position: fixed
+      right: 0
+      background-color: $white
+      top: 0
+      bottom: 0
+      z-index: 2
+      padding-top: $header-height // let place to toggler
+      padding-left: 1rem
+      padding-right: 1rem
+      width: rem(300px)
+
+      ul
+        flex-direction: column
+
+        li
+          padding-bottom: rem(10px)
+
+      #{$current}__link
+        height: rem(40px)
+        justify-content: flex-start
+        &::after
+          left: 0
+          right: auto
+          top: 50%
+          width: rem(2px)
+          height: 0%
+          transition: height $transition-default, opacity $transition-default, top $transition-default
+        &:hover,
+        &.active
+          &::after
+            top: 0%
+            height: 100%
+
+
+    &__backdrop
+      position: fixed
+      z-index: 2
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      background-color: rgba($black, .5)
+      visibility: hidden
+      opacity: 0
+      transition: opacity $transition-default, visibility 0s linear $transition-duration-default
+
+
+    &.active
+      #{$current}__backdrop
+        visibility: visible
+        opacity: 1
+        transition: opacity $transition-default
+
+      #{$current}__nav-right
+        transform: translateX(0%)
+
+
+    &__toggler
+      position: absolute
+      right: -1rem
+      top: 50%
+      transform: translateY(-50%)
+      display: block
+      z-index: 3
+      padding: 1rem
+      color: $primary
+      svg
+        font-size: rem(23px)
+
+    &__separator
+      padding-left: 0
+      padding-top: rem(10px)
+      &::before
+        left: 0
+        right: 0
+        top: 0
+        bottom: auto
+        width: auto
+        height: rem(2px)
