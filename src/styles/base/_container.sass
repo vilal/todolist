@@ -8,3 +8,10 @@
   padding-left: 1rem
   margin-right: auto
   margin-left: auto
+
+
+
+@each $name, $value in $grid-breakpoints
+  @media (min-width: map-get($grid-breakpoints, $name))
+    .container
+      max-width: $value - 30px

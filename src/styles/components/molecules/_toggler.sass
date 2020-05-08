@@ -1,0 +1,39 @@
+////////////////////
+// TOGGLER
+////////////////////////////////////////////////////////////////////////////////
+
+.toggler
+  @extend .btn
+  padding: 1rem
+
+  span
+    $gutter: rem(8px)
+    $height: rem(3px)
+    $width: rem(24px)
+    width: $width
+    height: $height
+    border-radius: $height
+    position: absolute
+    transform-origin: 50% 50%
+    background-color: $primary
+    opacity: 1
+    transition: all $transition-default
+    left: calc(50% - #{$width} * 0.5)
+
+    &:first-child
+      top: calc(50% - #{$height} * 0.5 - #{$gutter})
+    &:nth-child(2),
+    &:nth-child(3)
+      top: calc(50% - #{$height} * 0.5)
+    &:last-child
+      top: calc(50% - #{$height} * 0.5 + #{$gutter})
+
+  &.active
+    span
+      &:first-child,
+      &:last-child,
+        opacity: 0
+      &:nth-child(2)
+        transform: rotate(45deg)
+      &:nth-child(3)
+        transform: rotate(-45deg)
