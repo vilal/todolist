@@ -2,6 +2,8 @@
 // BUTTON
 ////////////////////////////////////////////////////////////////////////////////
 
+// BASE
+/////////////////////////////////////////////////
 .btn
   // reset btn default style
   margin-bottom: 0
@@ -9,3 +11,52 @@
   background-image: none
   border: 1px solid transparent
   background-color: transparent
+
+
+
+// SHAPE
+/////////////////////////////////////////////////
+.btn--square-rounded
+  width: rem(36px)
+  height: rem(34px)
+  border-radius: rem(16px)
+  text-align: center
+  overflow: hidden
+  display: inline-block
+  text-align: center
+  white-space: nowrap
+  line-height: rem(34px)
+
+
+
+// COLOR
+/////////////////////////////////////////////////
+.btn--gray
+  background-color: $gray
+  color: $white
+
+
+.btn--danger
+  background-color: $red
+  color: $white
+
+
+.btn--image
+  img
+    object-fit: cover
+    width: 100%
+    height: 100%
+
+
+
+// GROUP
+/////////////////////////////////////////////////
+.btn-group
+  $gutter: 0.5rem
+  margin-left: - $gutter
+  margin-right: - $gutter
+
+  [class*=" btn"],
+  [class^="btn"]
+    margin-left: $gutter
+    margin-right: $gutter
