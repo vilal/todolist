@@ -27,19 +27,35 @@
                     label.form-label Durée
                     input.form-control(type="text" v-model="duration")
                   .form-group
-                    input#recurrent(type="checkbox" v-model="recurrent")
-                    label(for="recurrent") Récurrent
+                    .input-btn(:class="{active: recurrent}")
+                      input#recurrent(type="checkbox" v-model="recurrent")
+                      label.input-btn__label(for="recurrent")
+                        .input-btn__icon.btn--square-rounded.btn--gray
+                          font-awesome-icon(icon="redo")
+                        | Récurrent
                   .form-group
-                    input#marked(type="checkbox" v-model="marked")
-                    label(for="marked") Epinglé
+                    .input-btn(:class="{active: marked}")
+                      input#marked(type="checkbox" v-model="marked")
+                      label.input-btn__label(for="marked")
+                        .input-btn__icon.btn--square-rounded.btn--gray
+                          font-awesome-icon(icon="thumbtack")
+                        | Epinglé
                   .form-group
-                    input#priority(type="checkbox" v-model="priority")
-                    label(for="priority") Prioritaire
+                    .input-btn(:class="{active: priority}")
+                      input#priority(type="checkbox" v-model="priority")
+                      label.input-btn__label(for="priority")
+                        .input-btn__icon.btn--square-rounded.btn--danger
+                          font-awesome-icon(icon="exclamation")
+                        | Prioritaire
                   .form-group
-                    input#team(type="checkbox" v-model="team")
-                    label(for="team") En équipe
+                    .input-btn(:class="{active: team}")
+                      input#team(type="checkbox" v-model="team")
+                      label.input-btn__label(for="team")
+                        .input-btn__icon.btn--square-rounded.btn--image
+                          img(src="./assets/luc.jpg")
+                        | En équipe
                   .form-group
-                    input.btn.btn--rounded.btn--block.btn--primary(type="submit" value="Envoyer")
+                    input.btn.btn--rounded.btn--block.btn--primary(type="submit" value="Envoyer" ref="submitButton")
 
 </template>
 
@@ -91,6 +107,7 @@ export default {
       this.marked = false
       this.priority = false
       this.team = false
+      this.$refs.submitButton.blur()
     }
   }
 }
