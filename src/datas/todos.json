@@ -1,0 +1,57 @@
+[{
+  "recurrent": false,
+  "marked": false,
+  "priority": false,
+  "team": false,
+  "title": "Take kids to school",
+  "description": "Lorem ipsum dolor sit amet",
+  "duration": "30 min"
+}, {
+  "recurrent": true,
+  "marked": true,
+  "priority": false,
+  "team": false,
+  "title": "Process email",
+  "description": "Nullam porttitor lacus at turpis. Donec pfalse metus vitae ipsum",
+  "duration": "30 min"
+}, {
+  "recurrent": true,
+  "marked": true,
+  "priority": false,
+  "team": false,
+  "title": "Daily Stand-up meeting",
+  "description": "Morbi vjvmbjmeje",
+  "duration": "15 min"
+}, {
+  "recurrent": false,
+  "marked": true,
+  "priority": false,
+  "team": true,
+  "title": "Create new templates",
+  "description": "In sagittis dui vel nisl",
+  "duration": "2h"
+}, {
+  "recurrent": false,
+  "marked": false,
+  "priority": false,
+  "team": false,
+  "title": "Lunch with Anna",
+  "description": "Donec ofalse",
+  "duration": "2h"
+}, {
+  "recurrent": false,
+  "marked": false,
+  "priority": true,
+  "team": false,
+  "title": "Write the presentation deck",
+  "description": "Donec ofalse",
+  "duration": ""
+}, {
+  "recurrent": false,
+  "marked": false,
+  "priority": false,
+  "team": false,
+  "title": "Call with David",
+  "description": "Integer ac neque",
+  "duration": "1h - 2h"
+}]

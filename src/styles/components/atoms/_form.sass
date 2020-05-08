@@ -1,0 +1,48 @@
+////////////////////
+// FORM
+////////////////////////////////////////////////////////////////////////////////
+
+// INPUT
+/////////////////////////////////////////////////
+.form-control
+  border: rem(1px) solid $gray
+  color: $primary-dark
+  padding: 0.7rem 1rem
+  transition: border-color $transition-default
+  width: 100%
+  border-radius: rem(3px)
+  font-family: $font-family-default
+  font-size: rem(14px)
+  +placeholder
+    color: rgba($gray, .8)
+    transition: color $transition-default
+  // Focus
+  &:focus
+    border-color: $primary
+    box-shadow: none
+    +placeholder
+      color: rgba($gray, 1)
+
+
+input.form-control
+  height: rem(40px)
+
+
+textarea.form-control
+  min-height: rem(40px)
+  resize: vertical
+
+
+
+// FORM LABEL
+/////////////////////////////////////////////////
+.form-label
+  display: block
+  margin-bottom: 0.5rem
+
+
+
+// FORM GROUP
+/////////////////////////////////////////////////
+.form-group
+  margin-bottom: 1.5rem

@@ -7,7 +7,16 @@
 body
   font-family: $font-family-default
   color: $primary-dark
-  background-color: $white
+  background-color: $primary-light
+  font-size: rem(18px)
+
+
+// MAIN WRAPPER
+/////////////////////////////////////////////////
+.main-wrapper
+  min-height: cal(100vh - #{$header-height}) // push footer on bottom
+  +rfs(rem(100px), padding-bottom)
+
 
 
 

@@ -1,0 +1,27 @@
+////////////////////
+// FORM INPUT BTN
+////////////////////////////////////////////////////////////////////////////////
+
+.input-btn
+  position: relative
+  &:not(.active)
+    color: $gray
+    .btn--gray,
+    .btn--danger
+      background-color: $gray-light
+    .btn--image
+      opacity: .5
+
+  input
+    opacity: 0
+    position: absolute
+    left: 0
+    top: 1rem
+
+  &__label
+    display: inline-flex
+    align-items: center
+    cursor: pointer
+
+  &__icon
+    margin-right: 0.5rem
