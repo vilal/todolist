@@ -16,7 +16,8 @@
     "minireset.css": "^0.0.6",
     "rfs": "^9.0.3",
     "typeface-raleway": "^0.0.75",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.0",

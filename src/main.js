@@ -11,6 +11,7 @@ import {
   faThumbtack,
   faExclamation,
   faPlus,
+  faMinus,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faSquare,
@@ -31,6 +32,7 @@ library.add(
   faSquare,
   faCheckSquare,
   faPlus,
+  faMinus,
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

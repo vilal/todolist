@@ -2,30 +2,44 @@
   #app
     .container
       main-header
-      h1 Todo
+      .main-wrapper
+        h1 Todo
 
-      todo-list(:todos="todos")
+        todo-list(:todos="todos")
 
-      div
-        font-awesome-icon(icon="plus")
-        span Add a task
+        active-item
+          .collapsible-form(slot-scope="{ setActive, active }" )
+            button.btn.collapsible-form__toggler(:class="{active: active}" @click="setActive(!active)")
+              .btn--gray-light.btn--square-rounded
+                font-awesome-icon(:icon="active ? 'minus' : 'plus'")
+              span.h2 Add a task
 
-      form(@submit.prevent="addTodo")
-        label Titre
-        input(type="text" v-model="title")
-        label Description
-        input(type="text" v-model="description")
-        label Durée
-        input(type="text" v-model="duration")
-        input(type="checkbox" v-model="recurrent")
-        label Récurrent
-        input(type="checkbox" v-model="marked")
-        label Epinglé
-        input(type="checkbox" v-model="priority")
-        label Prioritaire
-        input(type="checkbox" v-model="team")
-        label En équipe
-        input(type="submit" value="Envoyer")
+            collapse-transition
+              .card(v-show="active")
+                form(@submit.prevent="addTodo")
+                  .form-group
+                    label.form-label Titre
+                    input.form-control(type="text" v-model="title")
+                  .form-group
+                    label.form-label Description
+                    textarea.form-control(type="text" v-model="description")
+                  .form-group
+                    label.form-label Durée
+                    input.form-control(type="text" v-model="duration")
+                  .form-group
+                    input#recurrent(type="checkbox" v-model="recurrent")
+                    label(for="recurrent") Récurrent
+                  .form-group
+                    input#marked(type="checkbox" v-model="marked")
+                    label(for="marked") Epinglé
+                  .form-group
+                    input#priority(type="checkbox" v-model="priority")
+                    label(for="priority") Prioritaire
+                  .form-group
+                    input#team(type="checkbox" v-model="team")
+                    label(for="team") En équipe
+                  .form-group
+                    input.btn.btn--rounded.btn--block.btn--primary(type="submit" value="Envoyer")
 
 </template>
 
@@ -33,11 +47,15 @@
 import MainHeader from "./components/layout/Header.vue"
 import TodoList from "./components/todo/TodoList.vue"
 import datas from './datas/todos.json'
+import ActiveItem from './components/utilities/ActiveItem.vue'
+import {CollapseTransition} from 'vue2-transitions'
 
 export default {
   components: {
     MainHeader,
     TodoList,
+    ActiveItem,
+    CollapseTransition
   },
   data() {
     return {
