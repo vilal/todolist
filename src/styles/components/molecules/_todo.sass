@@ -20,6 +20,10 @@
 
   &__toggler
     cursor: pointer
+    color: $gray
+    width: 1.3em !important // against default FA size
+    height: auto
+    margin-left: 0.5rem
 
   &--inactive
     color: $gray
@@ -27,6 +31,7 @@
 
     .btn--danger
       background-color: $gray
+
 
 
   @media (min-width: map-get($grid-breakpoints, "lg"))
@@ -46,7 +51,7 @@
 
   @media (max-width: map-get($grid-breakpoints, "lg") - 1px)
     position: relative
-    padding-left: 2rem
+    padding-left: 3rem
 
     &__toggler
       position: absolute
