@@ -18,7 +18,7 @@ import {
   faCheckSquare,
 } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
+import "typeface-raleway"
 
 library.add(
   faList,
