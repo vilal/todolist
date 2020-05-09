@@ -1,7 +1,7 @@
 <template lang="pug">
   .todo(:class="{'todo--inactive': done}")
     .todo__content
-      font-awesome-icon.todo__toggler(:icon="['far', done ? 'check-square' : 'square']" size="lg" @click="setDone(!done)")
+      font-awesome-icon.todo__toggler(:icon="['far', done ? 'check-square' : 'square']" @click="setDone(!done)")
 
       h2 {{ title }}
 
