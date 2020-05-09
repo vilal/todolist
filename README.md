@@ -1,4 +1,17 @@
-# todolist
+# Todo list
+
+## Resume
+Display a Todo List. You can add a task with caracteristics and mark it done.
+
+See [Demo](https://objective-mcnulty-f5a07f.netlify.app)
+
+## Project technologies
+Work with [vue-cli](https://cli.vuejs.org/).
+
+CSS classes written with [BEM syntax](http://getbem.com/).
+
+Pre-processors Sass and Pug.
+
 
 ## Project setup
 ```
@@ -14,16 +27,3 @@ yarn run serve
 ```
 yarn run build
 ```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
