@@ -1,7 +1,7 @@
 <template lang="pug">
   active-item
     header.main-header(:class="{active: active}" slot-scope="{ setActive, active }")
-      button.toggler.main-header__toggler(:class="{active: active}" @click.prevent="setActive(!active)")
+      button.burger-toggler.main-header__toggler(:class="{active: active}" @click.prevent="setActive(!active)")
         span
         span
         span
