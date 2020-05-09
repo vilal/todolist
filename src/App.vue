@@ -55,7 +55,7 @@
                           img(src="./assets/luc.jpg")
                         | En équipe
                   .form-group
-                    input.btn.btn--rounded.btn--block.btn--primary(type="submit" value="Envoyer" ref="submitButton")
+                    input.btn.btn--rounded.btn--block.btn--primary(type="submit" value="Add task" ref="submitButton")
 
 </template>
 
